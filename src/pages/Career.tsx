@@ -1,35 +1,24 @@
-
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Clock, Briefcase, Users, Award, TrendingUp } from 'lucide-react';
-
 const Career = () => {
-  const jobOpenings = [
-    
-  ];
-
-  const benefits = [
-    {
-      icon: <Users className="w-8 h-8 text-gc-gold" />,
-      title: "Great Team Culture",
-      description: "Work with passionate professionals in a collaborative environment"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-gc-gold" />,
-      title: "Career Growth",
-      description: "Opportunities for professional development and career advancement"
-    },
-    {
-      icon: <Award className="w-8 h-8 text-gc-gold" />,
-      title: "Competitive Benefits",
-      description: "Comprehensive health coverage, performance bonuses, and more"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const jobOpenings = [];
+  const benefits = [{
+    icon: <Users className="w-8 h-8 text-gc-gold" />,
+    title: "Great Team Culture",
+    description: "Work with passionate professionals in a collaborative environment"
+  }, {
+    icon: <TrendingUp className="w-8 h-8 text-gc-gold" />,
+    title: "Career Growth",
+    description: "Opportunities for professional development and career advancement"
+  }, {
+    icon: <Award className="w-8 h-8 text-gc-gold" />,
+    title: "Competitive Benefits",
+    description: "Comprehensive health coverage, performance bonuses, and more"
+  }];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       <div className="pt-32">
@@ -58,8 +47,7 @@ const Career = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center p-6">
+              {benefits.map((benefit, index) => <Card key={index} className="text-center p-6">
                   <CardHeader>
                     <div className="flex justify-center mb-4">
                       {benefit.icon}
@@ -69,8 +57,7 @@ const Career = () => {
                   <CardContent>
                     <p className="text-gray-600">{benefit.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -86,8 +73,7 @@ const Career = () => {
             </div>
 
             <div className="grid gap-6 max-w-4xl mx-auto">
-              {jobOpenings.map((job, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+              {jobOpenings.map((job, index) => <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
@@ -115,8 +101,7 @@ const Career = () => {
                       </Button>
                     </div>
                   </div>
-                </Card>
-              ))}
+                </Card>)}
             </div>
 
             <div className="text-center mt-12">
@@ -139,17 +124,13 @@ const Career = () => {
               <Button className="bg-gc-gold hover:bg-gc-bronze text-white px-8 py-3">
                 Contact HR Team
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3">
-                Learn More About Us
-              </Button>
+              
             </div>
           </div>
         </section>
       </div>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Career;
